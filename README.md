@@ -1,20 +1,24 @@
 # LinkedIn AI Reply
 
-This is a Chrome extension that runs on LinkedIn and assists users in generating replies to messages
+This is a Chrome extension that runs on LinkedIn and assists users in generating replies to messages.
 
 ## Demo Video
 
+
+https://github.com/user-attachments/assets/97f5ae5f-769b-4b3b-9d0b-0bf2a0336228
+
+
 ## Features
 
-- Hide/Unhide ai button on focus/blur
-- Open a modal on click of ai button, which will take prompt and generate ai response
-- On click of insert button put reposnce on linkedin message box
+- Hide/Unhide AI button on focus/blur.
+- Open a modal with the click of AI button, which will take a prompt and generate AI response.
+- On click of the insert button put the response on LinkedIn message box.
 
 ## Technologies Used
 
 - TypeScript
 - ReactJS
-- Tailwind Css
+- Tailwind CSS
 - WXT framework for extension
 
 ## Prerequisites
@@ -32,7 +36,7 @@ Before you begin, ensure you have met the following requirements:
    git clone https://github.com/akmr-me/amresh_kumar.git
    ```
 
-2. Navigate to project directroy:
+2. Navigate to project directory:
 
    ```bash
    cd amresh_kumar
