@@ -3,7 +3,9 @@ const MESSAGE =
 
 async function getAIResponse(inputPromopt: string): Promise<string> {
   // Response from AI will be based on inpuPrompt
-  console.log({ inputPromopt });
+  if (!inputPromopt) {
+    throw new Error("Input Prompt in not given!");
+  }
   return new Promise((res, rej) => {
     setTimeout(() => {
       res(MESSAGE);
