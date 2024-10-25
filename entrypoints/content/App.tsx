@@ -1,14 +1,10 @@
-import { useState, useEffect, createContext } from "react";
 import "@/entrypoints/content/style.css";
-import ModalButton from "@/components/ModalButton";
+import AIButtonWrapper from "@/components/AIButtonWrapper";
 
 const App = () => {
-  const [mount, setMount] = useState(false);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
   const [isFocused] = useTextBoxSelector();
 
-  console.log("mount", mount);
-  return <ModalButton {...{ isFocused }} />;
+  return <AIButtonWrapper isFocused={isFocused} />;
 };
 
 export default App;

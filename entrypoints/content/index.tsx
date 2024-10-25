@@ -3,27 +3,21 @@ import App from "@/entrypoints/content/App";
 import MessageProvider from "@/context/message";
 
 let anchor: Element | null | undefined;
-console.log(",,", import.meta.env.WXT_TARGET_ELEMENT_CLASS_NAME);
+
 export default defineContentScript({
   matches: [import.meta.env.WXT_ALLOWED_URL],
-  // matches: ["*://www.linkedin.com/messaging/thread/*"],
   cssInjectionMode: "ui",
 
   async main(ctx) {
     const ui = await createShadowRootUi(ctx, {
-      name: "linkedin-chatgpt-writer",
+      name: import.meta.env.WXT_APP_NAME,
       position: "inline",
-      // anchor: `body`,
-      // // anchor: `.${import.meta.env.WXT_TARGET_ELEMENT_CLASS_NAME}`,,
-      // append: "last",
-      //----
       anchor: () => anchor,
       append: (anchor, root) => anchor.insertAdjacentElement("afterend", root),
       onMount: async (container) => {
         // don't mount react app directly on <body>
         const wrapper = document.createElement("div");
         container.append(wrapper);
-        console.log("called");
         const root = ReactDOM.createRoot(wrapper);
         root.render(
           <MessageProvider>
@@ -42,6 +36,7 @@ export default defineContentScript({
         // elements?.unmount();
       },
     });
+
     watchDomChanges(
       ctx,
       `[class^="${import.meta.env.WXT_TARGET_ELEMENT_CLASS_NAME}"]`,

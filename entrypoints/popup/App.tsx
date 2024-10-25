@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import reactLogo from '@/assets/react.svg';
-import wxtLogo from '/wxt.svg';
-import './App.css';
+import { useState } from "react";
+import reactLogo from "@/assets/react.svg";
+import wxtLogo from "/wxt.svg";
+import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,18 +16,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>WXT + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the WXT and React logos to learn more
-      </p>
+      <h1>LinkedIn AI Reply</h1>
     </>
   );
 }

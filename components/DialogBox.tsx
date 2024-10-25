@@ -4,11 +4,14 @@ interface ChatBotType {
   loading: boolean;
 }
 
-const ChatBox = ({ loading }: ChatBotType) => {
+const DialogBox = ({ loading }: ChatBotType) => {
   const { messages } = useMessageState();
+
   if (!messages.length) return;
+
   const getAninamationBlinkClass = (index: number) =>
     messages.length - 1 == index && loading ? "animate-blink" : "";
+
   return (
     <div className="p-4 pl-0 pr-0 space-y-4 w-full max-h-[250px] overflow-auto">
       {/* First Message (Button-like) */}
@@ -39,4 +42,4 @@ const ChatBox = ({ loading }: ChatBotType) => {
   );
 };
 
-export default ChatBox;
+export default DialogBox;
